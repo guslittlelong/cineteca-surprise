@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primo Colloquio — Cineteca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(180deg, #f5ede3 0%, #efe2d4 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+      border: 1px solid rgba(255,255,255,0.5);
+      animation: fadeUp 1s ease;
+      position: relative;
+    }
+
+    .top {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero {
+      width: 100%;
+      display: block;
+    }
+
+    .floating-film {
+      position: absolute;
+      width: 140px;
+      height: 24px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        #2d2d2d 0px,
+        #2d2d2d 12px,
+        #f3c98b 12px,
+        #f3c98b 20px
+      );
+      opacity: 0.18;
+      border-radius: 100px;
+      animation: drift 10s infinite linear;
+    }
+
+    .film1 {
+      top: 40px;
+      left: -30px;
+      transform: rotate(-12deg);
+    }
+
+    .film2 {
+      bottom: 60px;
+      right: -40px;
+      transform: rotate(16deg);
+      animation-duration: 14s;
+    }
+
+    .content {
+      padding: 28px;
+      color: #4a3c31;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f7d9b4;
+      color: #6b4c34;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .details {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .detail {
+      background: rgba(255,255,255,0.7);
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .icon {
+      font-size: 1.3rem;
+    }
+
+    .detail-text {
+      font-size: 0.98rem;
+      line-height: 1.3;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      line-height: 1.5;
+      padding-top: 8px;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 18px;
+      animation: pulse 2s infinite ease-in-out;
+      opacity: 0.7;
+    }
+
+    .s1 { top: 18px; right: 20px; }
+    .s2 { top: 140px; left: 18px; animation-delay: 1s; }
+    .s3 { bottom: 150px; right: 24px; animation-delay: 0.5s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateX(0) rotate(-12deg);
+      }
+      to {
+        transform: translateX(40px) rotate(-12deg);
+      }
+    }
+
+    @keyframes pulse {
+      0%,100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.25);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="sparkle s1">✨</div>
+    <div class="sparkle s2">🎞️</div>
+    <div class="sparkle s3">⭐</div>
+
+    <div class="floating-film film1"></div>
+    <div class="floating-film film2"></div>
+
+    <div class="top">
+      
+      <!-- SOSTITUISCI src con la tua immagine -->
+      <img
+        class="hero"
+        src="PrimoColloquio.png"
+        alt="Cineteca illustration"
+      />
+    </div>
+
+    <div class="content">
+      <div class="badge">Nuova avventura ✨</div>
+
+      <h1>
+        Primo colloquio<br>
+        alla Cineteca 🎬
+      </h1>
+
+      <p class="subtitle">
+        Tra pellicole, restauri e storie da custodire.
+        Direi che è proprio il posto giusto per te.
+      </p>
+
+      <div class="details">
+        <div class="detail">
+          <div class="icon">📍</div>
+          <div class="detail-text">
+            Cineteca di Bologna
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="icon">🗓️</div>
+          <div class="detail-text">
+            Inserisci qui la data del colloquio
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="icon">🧪</div>
+          <div class="detail-text">
+            Restauro e cura delle pellicole cinematografiche
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        In bocca al lupo per il tuo primo passo
+        nel mondo del cinema restaurato 💛
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
